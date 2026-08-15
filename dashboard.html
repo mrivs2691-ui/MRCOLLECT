@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — MRCOLLECT</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dash-body">
+
+<div class="dash-shell" data-requires-auth>
+
+  <aside class="dash-sidebar">
+    <div class="brand"><span class="brand-mark">MC</span>MRCOLLECT</div>
+    <ul class="dash-nav">
+      <li><a href="dashboard.html" class="is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="1"/><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></a></li>
+      <li><a href="dashboard.html#accounts" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>Accounts</span></a></li>
+      <li><a href="dashboard.html#borrowers" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg><span>Borrowers</span></a></li>
+      <li><a href="dashboard.html#collections" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Collections</span></a></li>
+      <li><a href="dashboard.html#payments" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span>Payments</span></a></li>
+      <li><a href="dashboard.html#collectors" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><path d="M2 20v-1a6 6 0 0 1 12 0v1"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 20v-.8a4 4 0 0 1 6.5-3.1"/></svg><span>Collectors</span></a></li>
+      <li><a href="dashboard.html#assignments" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Assignments</span></a></li>
+    </ul>
+    <div class="dash-nav-label">Field Operations</div>
+    <ul class="dash-nav">
+      <li><a href="fieldman-location.html" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Fieldman Location</span></a></li>
+      <li><a href="field-activity.html" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M13 3v5h5"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg><span>Field Activity</span></a></li>
+    </ul>
+    <ul class="dash-nav" style="margin-top:14px;">
+      <li><a href="dashboard.html#reports" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="12" y="7" width="3" height="11"/><rect x="17" y="13" width="3" height="5"/></svg><span>Reports</span></a></li>
+      <li><a href="dashboard.html#analytics" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l4-4 4 4 6-6 4 4"/><path d="M3 20h18"/></svg><span>Analytics</span></a></li>
+      <li><a href="dashboard.html#notifications" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span>Notifications</span></a></li>
+      <li><a href="dashboard.html#settings" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg><span>Settings</span></a></li>
+    </ul>
+    <div class="dash-sidebar-footer">
+      <div class="dash-user">
+        <div class="dash-user-avatar" data-user-initials>JD</div>
+        <div>
+          <div class="dash-user-name" data-user-name>John Dela Cruz</div>
+          <div class="dash-user-role" data-user-role>Collection Manager</div>
+        </div>
+      </div>
+      <button class="btn btn-outline dash-logout-btn" data-logout>Logout</button>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div>
+        <button class="mobile-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1>Dashboard</h1>
+        <p>Welcome back — here's what's happening across your collection operation today.</p>
+      </div>
+      <div class="dash-topbar-actions">
+        <span class="demo-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          DEMO DATA
+        </span>
+      </div>
+    </div>
+
+    <div class="stat-cards-row">
+      <div class="stat-card">
+        <div class="stat-label">Active Loan Accounts</div>
+        <div class="stat-num">1,284</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Outstanding Balance</div>
+        <div class="stat-num is-white">₱18.6M</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Collected This Month</div>
+        <div class="stat-num">₱4.2M</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Overdue Accounts</div>
+        <div class="stat-num is-white">96</div>
+      </div>
+    </div>
+
+    <!-- Field Operations feature card -->
+    <div class="field-ops-card" id="field-operations">
+      <div class="field-ops-card-head">
+        <div>
+          <h2>Field Operations</h2>
+          <p>See where your field collectors are working right now and review their activity for audit and monitoring.</p>
+        </div>
+        <span class="demo-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          LIVE DEMO
+        </span>
+      </div>
+
+      <div class="field-ops-stats">
+        <div class="stat-block">
+          <div class="stat-num">18</div>
+          <div class="stat-label">Active Collectors</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">14</div>
+          <div class="stat-label">On Field</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">128</div>
+          <div class="stat-label">Activities Today</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-num">342</div>
+          <div class="stat-label">Locations Recorded</div>
+        </div>
+      </div>
+
+      <a href="fieldman-location.html" class="btn btn-primary">View Fieldman Location →</a>
+    </div>
+
+    <div class="panel" id="accounts">
+      <div class="panel-head">
+        <div>
+          <h3>Recent Loan Accounts</h3>
+          <p class="panel-sub">A snapshot of borrower accounts across your portfolio.</p>
+        </div>
+      </div>
+      <div class="audit-table-wrap">
+        <table class="audit-table">
+          <thead>
+            <tr><th>Borrower</th><th>Loan Account</th><th>Outstanding</th><th>Due Amount</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="cell-name">Dela Cruz, R.</td><td>LN-001245</td><td class="cell-amount">₱18,400</td><td class="cell-amount">₱18,400</td><td><span class="status-chip chip-pending">Overdue</span></td></tr>
+            <tr><td class="cell-name">Santos Trading</td><td>LN-001246</td><td class="cell-amount">₱42,000</td><td class="cell-amount">₱12,000</td><td><span class="status-chip chip-recorded">Partially Paid</span></td></tr>
+            <tr><td class="cell-name">Reyes, M.</td><td>LN-001247</td><td class="cell-amount">₱9,600</td><td class="cell-amount">₱9,600</td><td><span class="status-chip chip-recorded">Promise to Pay</span></td></tr>
+            <tr><td class="cell-name">Villanueva Co-op</td><td>LN-001248</td><td class="cell-amount">₱0</td><td class="cell-amount">₱0</td><td><span class="status-chip chip-paid">Paid</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="panel" id="reports">
+      <div class="panel-head">
+        <div>
+          <h3>Reports &amp; Analytics</h3>
+          <p class="panel-sub">Portfolio-wide performance and collector productivity reports.</p>
+        </div>
+      </div>
+      <p style="color:var(--ink-3); font-size:13.5px; margin:0;">This section is a placeholder in the current portfolio demo. Full reporting views (collections trend, collector leaderboard, aging buckets) would live here in production.</p>
+    </div>
+  </main>
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

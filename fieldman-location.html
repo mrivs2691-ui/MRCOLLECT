@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fieldman Location — MRCOLLECT</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dash-body">
+
+<div class="dash-shell" data-requires-auth>
+
+  <aside class="dash-sidebar">
+    <div class="brand"><span class="brand-mark">MC</span>MRCOLLECT</div>
+    <ul class="dash-nav">
+      <li><a href="dashboard.html" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="1"/><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span></a></li>
+      <li><a href="dashboard.html#accounts" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg><span>Accounts</span></a></li>
+      <li><a href="dashboard.html#borrowers" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg><span>Borrowers</span></a></li>
+      <li><a href="dashboard.html#collections" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span>Collections</span></a></li>
+      <li><a href="dashboard.html#payments" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span>Payments</span></a></li>
+      <li><a href="dashboard.html#collectors" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="7" r="3"/><path d="M2 20v-1a6 6 0 0 1 12 0v1"/><circle cx="18" cy="8" r="2.4"/><path d="M15.5 20v-.8a4 4 0 0 1 6.5-3.1"/></svg><span>Collectors</span></a></li>
+      <li><a href="dashboard.html#assignments" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><span>Assignments</span></a></li>
+    </ul>
+    <div class="dash-nav-label">Field Operations</div>
+    <ul class="dash-nav">
+      <li><a href="fieldman-location.html" class="is-active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Fieldman Location</span></a></li>
+      <li><a href="field-activity.html" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M13 3v5h5"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg><span>Field Activity</span></a></li>
+    </ul>
+    <ul class="dash-nav" style="margin-top:14px;">
+      <li><a href="dashboard.html#reports" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="7"/><rect x="12" y="7" width="3" height="11"/><rect x="17" y="13" width="3" height="5"/></svg><span>Reports</span></a></li>
+      <li><a href="dashboard.html#analytics" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l4-4 4 4 6-6 4 4"/><path d="M3 20h18"/></svg><span>Analytics</span></a></li>
+      <li><a href="dashboard.html#notifications" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span>Notifications</span></a></li>
+      <li><a href="dashboard.html#settings" class=""><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg><span>Settings</span></a></li>
+    </ul>
+    <div class="dash-sidebar-footer">
+      <div class="dash-user">
+        <div class="dash-user-avatar" data-user-initials>JD</div>
+        <div>
+          <div class="dash-user-name" data-user-name>John Dela Cruz</div>
+          <div class="dash-user-role" data-user-role>Collection Manager</div>
+        </div>
+      </div>
+      <button class="btn btn-outline dash-logout-btn" data-logout>Logout</button>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div>
+        <button class="mobile-sidebar-toggle" id="sidebar-toggle" aria-label="Toggle menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+        <h1>Fieldman Location</h1>
+        <p>Monitor field activity, collector locations, routes and movement history.</p>
+      </div>
+      <div class="dash-topbar-actions">
+        <span class="demo-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          LIVE DEMO · DEMO LOCATION DATA
+        </span>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-bar">
+      <div class="filter-field">
+        <label for="filter-date">Date</label>
+        <select id="filter-date">
+          <option>Today</option>
+          <option>Yesterday</option>
+          <option>This Week</option>
+          <option>Custom Date</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-area">Area</label>
+        <select id="filter-area">
+          <option>All Areas</option>
+          <option>Manila</option>
+          <option>Quezon City</option>
+          <option>Makati</option>
+          <option>Pasig</option>
+          <option>Cavite</option>
+          <option>Laguna</option>
+          <option>Bulacan</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-collector">Collector</label>
+        <select id="filter-collector">
+          <option>All Collectors</option>
+          <option>Juan Dela Cruz</option>
+          <option>Maria Garcia</option>
+          <option>Pedro Santos</option>
+          <option>Ana Reyes</option>
+          <option>Mark Santos</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filter-status">Status</label>
+        <select id="filter-status">
+          <option>All</option>
+          <option>Active</option>
+          <option>Offline</option>
+          <option>Completed</option>
+          <option>On Field</option>
+        </select>
+      </div>
+      <div class="filter-actions">
+        <button class="btn btn-outline btn-sm" id="refresh-location-btn">Refresh Location</button>
+        <button class="btn btn-primary btn-sm" id="export-activity-btn">Export Activity</button>
+      </div>
+    </div>
+
+    <!-- Field activity summary -->
+    <div class="stat-cards-row">
+      <div class="stat-card"><div class="stat-label">Active Collectors</div><div class="stat-num">18</div></div>
+      <div class="stat-card"><div class="stat-label">Collectors On Field</div><div class="stat-num">14</div></div>
+      <div class="stat-card"><div class="stat-label">Field Activities Today</div><div class="stat-num">128</div></div>
+      <div class="stat-card"><div class="stat-label">Locations Recorded</div><div class="stat-num">342</div></div>
+    </div>
+
+    <!-- Map + collector list -->
+    <div class="location-layout">
+      <div class="map-panel">
+        <div class="map-legend">
+          <span class="legend-item"><span class="legend-dot dot-active"></span>Active</span>
+          <span class="legend-item"><span class="legend-dot dot-onfield"></span>On Field</span>
+          <span class="legend-item"><span class="legend-dot dot-collection"></span>Collection Activity</span>
+          <span class="legend-item"><span class="legend-dot dot-offline"></span>Offline</span>
+          <span class="legend-item"><span class="legend-dot dot-attention"></span>Attention</span>
+        </div>
+        <div id="fieldman-map"></div>
+        <div class="map-fallback" id="map-fallback">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4Z"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+          <div>Map tiles couldn't load (no internet connection in this preview). In production, the Leaflet + OpenStreetMap view renders here.</div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:0;">
+        <div class="panel-head">
+          <h3>Collectors</h3>
+        </div>
+        <div class="collector-list" id="collector-list"></div>
+      </div>
+    </div>
+
+    <!-- Field Session widget -->
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h3>Field Session — Juan Dela Cruz</h3>
+          <p class="panel-sub">Started when a collector begins field work; ends when the session is closed out.</p>
+        </div>
+        <span class="demo-pill">DEMO DATA</span>
+      </div>
+      <div class="session-widget">
+        <div class="session-status">
+          <span class="status-dot" style="background:#16e0a0;"></span>
+          <div>
+            <div style="font-weight:600; font-size:14px;">Field Session Active</div>
+            <div class="session-meta">Started 8:12 AM · Office / Starting Point · Assigned Area: Quezon City</div>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-sm" disabled>End Field Session</button>
+      </div>
+    </div>
+
+    <!-- Field Activity Audit -->
+    <div class="panel" id="field-activity-audit">
+      <div class="panel-head">
+        <div>
+          <h3>Field Activity Audit</h3>
+          <p class="panel-sub">Who, where, when, and what they did — Juan Dela Cruz, today.</p>
+        </div>
+      </div>
+      <div class="audit-table-wrap">
+        <table class="audit-table">
+          <thead>
+            <tr><th>Time</th><th>Collector</th><th>Location</th><th>Activity</th><th>Account</th><th>Amount</th><th>Status</th></tr>
+          </thead>
+          <tbody id="audit-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Geolocation Audit + Alerts -->
+    <div class="location-layout" style="grid-template-columns: 1fr 1fr;">
+      <div class="panel" style="margin-bottom:0;">
+        <div class="panel-head">
+          <div>
+            <h3>Location Audit</h3>
+            <p class="panel-sub">Review collector movement and field activity history. DEMO VALUES.</p>
+          </div>
+        </div>
+        <div class="geo-audit-grid">
+          <div class="stat-block"><div class="stat-num">08:12 AM</div><div class="stat-label">First Location</div></div>
+          <div class="stat-block"><div class="stat-num">10:42 AM</div><div class="stat-label">Last Location</div></div>
+          <div class="stat-block"><div class="stat-num">12.8 km</div><div class="stat-label">Distance Covered</div></div>
+          <div class="stat-block"><div class="stat-num">17</div><div class="stat-label">Locations Recorded</div></div>
+          <div class="stat-block"><div class="stat-num">14</div><div class="stat-label">Field Activities</div></div>
+          <div class="stat-block"><div class="stat-num">8</div><div class="stat-label">Collection Activities</div></div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:0;">
+        <div class="panel-head">
+          <div>
+            <h3>Activity Alerts</h3>
+            <p class="panel-sub">Demo alerts only — not live geofencing or fraud detection.</p>
+          </div>
+        </div>
+        <div class="alert-list">
+          <div class="alert-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div><div>Ana Reyes has not updated location for 25 minutes.</div><div class="alert-meta">DEMO ALERT · 10:38 AM</div></div>
+          </div>
+          <div class="alert-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div><div>Mark Santos moved outside assigned area.</div><div class="alert-meta">DEMO ALERT · 10:15 AM</div></div>
+          </div>
+          <div class="alert-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <div><div>Collection recorded at an unverified location.</div><div class="alert-meta">DEMO ALERT · 09:47 AM</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Geo-fencing demo -->
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h3>Geo-Fencing</h3>
+          <p class="panel-sub">Visual/demo feature only — not backed by live geofencing APIs in this build.</p>
+        </div>
+      </div>
+      <div class="geofence-grid">
+        <div class="geofence-card">
+          <div class="gf-name">Juan Dela Cruz</div>
+          <div class="gf-row"><span>Assigned Area</span><span style="color:var(--white);">Quezon City</span></div>
+          <div class="gf-row"><span>Allowed Radius</span><span style="color:var(--white);">5 km</span></div>
+          <div class="gf-row"><span>Current Location</span><span style="color:var(--white);">Quezon City</span></div>
+          <div class="gf-status is-ok">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Within Assigned Area
+          </div>
+        </div>
+        <div class="geofence-card">
+          <div class="gf-name">Mark Santos</div>
+          <div class="gf-row"><span>Assigned Area</span><span style="color:var(--white);">Cavite</span></div>
+          <div class="gf-row"><span>Allowed Radius</span><span style="color:var(--white);">5 km</span></div>
+          <div class="gf-row"><span>Current Location</span><span style="color:var(--white);">Las Piñas (outside)</span></div>
+          <div class="gf-status is-warn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Outside Assigned Area
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Location History -->
+    <div class="panel" id="location-history">
+      <div class="panel-head">
+        <div>
+          <h3>Location History</h3>
+          <p class="panel-sub">Raw location records — demo data. Not real coordinates of real people.</p>
+        </div>
+      </div>
+      <div class="audit-table-wrap">
+        <table class="audit-table">
+          <thead>
+            <tr><th>Timestamp</th><th>Collector</th><th>Latitude</th><th>Longitude</th><th>Area</th><th>Activity</th><th>Status</th></tr>
+          </thead>
+          <tbody id="location-history-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Audit Trail -->
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h3>Activity Audit Trail</h3>
+          <p class="panel-sub">Juan Dela Cruz — chronological system log.</p>
+        </div>
+      </div>
+      <div class="audit-trail-feed" id="audit-trail-feed"></div>
+    </div>
+  </main>
+</div>
+
+<!-- Collector detail side panel (View Activity) -->
+<div class="detail-overlay" id="detail-overlay">
+  <div class="detail-panel" id="detail-panel">
+    <div class="detail-panel-head">
+      <div>
+        <h3 id="dp-name">Juan Dela Cruz</h3>
+        <p class="detail-panel-sub" id="dp-sub">Field Collector</p>
+      </div>
+      <button class="modal-close" id="detail-close-btn" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="status-line">
+      <span class="legend-dot dot-active" id="dp-status-dot"></span>
+      <span id="dp-status-text">Active</span>
+    </div>
+
+    <div class="detail-grid" id="dp-grid"></div>
+
+    <div class="detail-section-title">Movement / Route Today</div>
+    <div class="route-timeline" id="dp-route"></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/fieldman-data.js"></script>
+<script src="js/fieldman-map.js"></script>
+</body>
+</html>

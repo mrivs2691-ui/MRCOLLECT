@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank You — MRCOLLECT</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<style>
+  .success-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  .success-page .card {
+    max-width: 460px;
+    background: var(--navy-900);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-l);
+    padding: 48px 36px;
+  }
+</style>
+</head>
+<body>
+  <!--
+    This page only renders for browsers without JavaScript, where
+    js/form.js could not intercept the submit and show the in-modal
+    success state. With JavaScript enabled, the Request a Demo form
+    submits via fetch() and never navigates here — see js/form.js.
+  -->
+  <div class="success-page">
+    <div class="card">
+      <div class="success-icon" style="margin: 0 auto 22px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--green)"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1 style="font-size: 24px; margin-bottom: 14px;">Thank you for your interest in MRCOLLECT.</h1>
+      <p style="color: var(--ink-2); margin-bottom: 28px;">Your demo request has been received.<br>Our team will contact you shortly.</p>
+      <a href="index.html" class="btn btn-primary">Back to MRCOLLECT</a>
+    </div>
+  </div>
+</body>
+</html>

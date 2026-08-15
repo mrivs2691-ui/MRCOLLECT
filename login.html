@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log In — MRCOLLECT</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="auth-body">
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="brand"><span class="brand-mark">MC</span>MRCOLLECT</div>
+    <h1>Welcome to MRCOLLECT</h1>
+    <p class="auth-sub">Sign in to your collection management platform.</p>
+
+    <div class="auth-error" id="login-error"></div>
+
+    <!--
+      Demo authentication only. Replace with Supabase Auth before
+      production use. See js/auth.js for the full implementation note.
+    -->
+    <form id="login-form" novalidate>
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" autocomplete="username" required />
+      </div>
+      <div class="form-field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+
+      <div class="auth-row">
+        <label class="auth-check">
+          <input type="checkbox" name="remember" />
+          Remember Me
+        </label>
+        <a href="#" id="forgot-password-link">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">Log In</button>
+    </form>
+
+    <div class="auth-notice">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <span>This is a portfolio demo login. Authentication shown here is for demonstration only and will be replaced with a production-grade provider (Supabase Auth) before real customer use.</span>
+    </div>
+
+    <a href="index.html" class="auth-back-link">← Back to MRCOLLECT</a>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>
